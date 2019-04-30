@@ -29,13 +29,13 @@ library(prettydoc)
 
 ## __ Produce a default html output with rmarkdown::render -----
 rmarkdown::render(
-  "2019-03-25 report creation.R",
+  "2019-03-25 ReportCreationExample.R",
   output_file = "./output/ex_01_render_default.html"
 )
 
 ## __ Produce a minimal html output with rmarkdown::render for comparison -----
 rmarkdown::render(
-  "2019-03-25 report creation.R",
+  "2019-03-25 ReportCreationExample.R",
   output_format =  rmarkdown::html_document(
     theme = NULL, mathjax = NULL, highlight = NULL
   ),
@@ -44,7 +44,7 @@ rmarkdown::render(
 
 ## __ Produce html output with custom css, with external dependency ----
 rmarkdown::render(
-  "2019-03-25 report creation.R",
+  "2019-03-25 ReportCreationExample.R",
   output_format =  rmarkdown::html_document(
     theme = NULL, mathjax = NULL, highlight = NULL,
     css = "./css/rmarkdown_spin_css_air.css"
@@ -56,7 +56,7 @@ rmarkdown::render(
 ## __ other html_document themes -----
 # see help file for full list of available themes
 rmarkdown::render(
-  "2019-03-25 report creation.R",
+  "2019-03-25 ReportCreationExample.R",
   output_format =  rmarkdown::html_document(
     theme = "journal", mathjax = NULL, highlight = NULL
   ),
@@ -64,7 +64,7 @@ rmarkdown::render(
 )
 
 rmarkdown::render(
-  "2019-03-25 report creation.R",
+  "2019-03-25 ReportCreationExample.R",
   output_format =  rmarkdown::html_document(
     theme = "yeti", mathjax = NULL, highlight = NULL
   ),
@@ -74,7 +74,7 @@ rmarkdown::render(
 ## _ Lightweight  option for html files with library prettydoc -----
 # check help file for all available themes
 rmarkdown::render(
-  "2019-03-25 report creation.R",
+  "2019-03-25 ReportCreationExample.R",
   output_format =  prettydoc::html_pretty(
     theme = "cayman"
   ),
