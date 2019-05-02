@@ -16,7 +16,7 @@ And you should look at the two example files in this repository
   - without relying on your collaborator or advisor to run your code
   - based on your script file, without converting your code into RMarkdown
   - through the mechanisms of a familiar environment, R and RStudio
-  - by rerunning all your code in the background, so you and your collaborator/advisor know it is reprodicuble (up to a certain point)
+  - by rerunning all your code in the background, so you and your collaborator/advisor know it is reproducible (up to a certain point)
 3. You can increase the easiness and efficiency even more by creating a snippet that semi-automates all of these objectives for you. This is explained at the end of output script file.
 
 ## What are you waiting for?
