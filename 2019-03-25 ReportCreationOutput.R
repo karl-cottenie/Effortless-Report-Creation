@@ -100,3 +100,31 @@ snippet cayman
 # but you can change that of course too.
 
 # usage: type "cayman" in console, snippet will appear, type file name, enter
+
+## Second option
+snippet cayman
+  rmarkdown::render(
+    "`r 
+    {list.files(pattern = "*.R") %>%
+    file.info() %>%
+    {bind_cols(FileName = row.names(.), .)} %>% 
+    arrange(desc(atime)) %>% 
+    pull(FileName) %>% 
+    .[1]}
+    `",
+    output_format =  prettydoc::html_pretty(
+      theme = "cayman"
+    ),
+    output_file = "./output/`r 
+    {list.files(pattern = "*.R") %>%
+    file.info() %>%
+    {bind_cols(FileName = row.names(.), .)} %>% 
+    arrange(desc(atime)) %>% 
+    pull(FileName) %>% 
+    .[1]}
+    `.html"
+    )
+# save the script file as the last file in your folder that was saved,
+# immediately after start typing cayman in the console
+# tab-complete if necessary, and it will automatically load the last saved file as the file to 
+# create the report from.
