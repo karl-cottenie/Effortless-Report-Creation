@@ -30,6 +30,8 @@ theme_set(theme_light())
 # inspect the data set
 mpg
 
+
+
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy))
 
@@ -42,8 +44,8 @@ ggplot(data = mpg) +
 
 ## _ Example code for analysis ------
 
-glmfit <- glm(am ~ wt, mtcars, family="binomial")
-tidy(glmfit)
+glmfit <- glm(am ~ hp, mtcars, family="binomial")
+tidy(glmfit) 
 
 augment(glmfit)
 

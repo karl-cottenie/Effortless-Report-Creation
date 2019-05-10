@@ -115,16 +115,21 @@ snippet cayman
     output_format =  prettydoc::html_pretty(
       theme = "cayman"
     ),
-    output_file = "./output/`r 
+    output_file = "./output/`r paste(sys.date(),
     {list.files(pattern = "*.R") %>%
     file.info() %>%
     {bind_cols(FileName = row.names(.), .)} %>% 
     arrange(desc(atime)) %>% 
     pull(FileName) %>% 
-    .[1]}
+    .[1]}, sep = "_")
     `.html"
     )
-# save the script file as the last file in your folder that was saved,
-# immediately after start typing cayman in the console
-# tab-complete if necessary, and it will automatically load the last saved file as the file to 
-# create the report from.
+  
+  ## Notes
+  # copy the above code to the snippets section in global options
+  # make sure that each line after the snippet line starts with a tab
+  # save the script file (OutputExample.R) as the last file in your folder that was saved,
+# immediately after saving start typing cayman in the console
+# tab-complete if necessary, and it will automatically load the last saved file as 
+# the file to create the report from.
+# It will also add a time stamp in front of the html file name
