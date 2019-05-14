@@ -28,9 +28,7 @@ theme_set(theme_light())
 ## _ Example code for figures -----
 
 # inspect the data set
-mpg
-
-
+mpg #trial2
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy))
@@ -38,6 +36,7 @@ ggplot(data = mpg) +
 ggplot(data = mpg) + # first plot w/ inline comments
   geom_point(mapping = aes(x = displ, y = hwy, color = class))
 
+# (*_*)
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) + 
   facet_wrap(~ class, nrow = 2)
@@ -47,6 +46,7 @@ ggplot(data = mpg) +
 glmfit <- glm(am ~ hp, mtcars, family="binomial")
 tidy(glmfit) 
 
+# (*_*)
 augment(glmfit)
 
 glance(glmfit)

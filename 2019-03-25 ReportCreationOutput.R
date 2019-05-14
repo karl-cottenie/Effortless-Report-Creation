@@ -83,53 +83,15 @@ rmarkdown::render(
 
 ## _ Final piece of the puzzle: a snippet to almost automate it ----
 
-snippet cayman
-  rmarkdown::render(
-  "${1:file.R}",
-  output_format =  prettydoc::html_pretty(
-    theme = "cayman"
-  ),
-  output_file = "./output/${1:file}.html"
-  )
-  
-## Notes
-# copy the above code to the snippets section in global options
-# make sure that each line after the snippet line starts with a tab
-# I use cayman as default theme, but you can change that based on code above
-# also by default same name for html as the script file name
-# but you can change that of course too.
+# see the snippet.R file for the annotated code
+# see the r.snippet file for the same code in the snippet format
+# the easiest way to use this is to
+# open your system specific snippet file (~/.R/r.snippet), for instance in RStudio
+# directly copy-paste the snippet you want into it, save it, and you can use it immediately.
 
-# usage: type "cayman" in console, snippet will appear, type file name, enter
+# alternatively, open the snippet editor in Tools > Global Options > Code > Edit snippets
+# if you want to use this method, make sure that every line starts with a tab
+# otherwise the snippet will not work
+# if you see red line starts, you do not have a tab at the start of your line
 
-## Second option
-snippet cayman
-  rmarkdown::render(
-    "`r 
-    {list.files(pattern = "*.R") %>%
-    file.info() %>%
-    {bind_cols(FileName = row.names(.), .)} %>% 
-    arrange(desc(atime)) %>% 
-    pull(FileName) %>% 
-    .[1]}
-    `",
-    output_format =  prettydoc::html_pretty(
-      theme = "cayman"
-    ),
-    output_file = "./output/`r paste(sys.date(),
-    {list.files(pattern = "*.R") %>%
-    file.info() %>%
-    {bind_cols(FileName = row.names(.), .)} %>% 
-    arrange(desc(atime)) %>% 
-    pull(FileName) %>% 
-    .[1]}, sep = "_")
-    `.html"
-    )
   
-  ## Notes
-  # copy the above code to the snippets section in global options
-  # make sure that each line after the snippet line starts with a tab
-  # save the script file (OutputExample.R) as the last file in your folder that was saved,
-# immediately after saving start typing cayman in the console
-# tab-complete if necessary, and it will automatically load the last saved file as 
-# the file to create the report from.
-# It will also add a time stamp in front of the html file name
