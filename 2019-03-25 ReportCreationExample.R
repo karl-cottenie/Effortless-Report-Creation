@@ -28,7 +28,7 @@ theme_set(theme_light())
 ## _ Example code for figures -----
 
 # inspect the data set
-mpg #trial2
+mpg #trial6
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy))

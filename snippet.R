@@ -57,7 +57,7 @@ rm(vcScriptNameIn, vcScriptNameOut)
 # code that will go into snippet to create a report from subcomponents of a script file
 # the subcomponents are identified by # (*_*), for which I also created a snippet :-)
 # and run until the end of the next first empty line
-# since the full code will not be run, all objects need to be in the environment
+# !!! since the full code will not be run, all objects need to be in the environment!!!
 # start everything of by saving the script file just before running this snippet
 
 # identifies the relevant file
